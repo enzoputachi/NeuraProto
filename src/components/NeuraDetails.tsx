@@ -48,7 +48,6 @@ const NeuraDetails = () => {
             <motion.div
               key={i}
               custom={i}
-              variants={lineVariants}
               initial="hidden"
               animate="visible"
             >
