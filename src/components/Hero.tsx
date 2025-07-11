@@ -102,22 +102,16 @@ const Hero = () => {
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2">
-            <div 
-              className="pulse-chip mb-3 sm:mb-6 opacity-0 animate-fade-in" 
-              style={{ animationDelay: "0.1s" }}
-            >
-              {/* <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white mr-2">01</span> */}
-              {/* <span>Purpose</span> */}
-            </div>
+            
             
             <h1 
               className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in text-gray-200" 
               style={{ animationDelay: "0.3s" }}
             >
-              AI That Finds,
-              Tracks and Grows
-              Your <span className="text-red-600">Savings</span> with
-              the<br className="hidden sm:inline" />Right Assets
+              Where Ai & Experts Unite 
+              To Grow Your
+              <span className="text-red-600"> Savings</span> With
+              the<br className="hidden sm:inline" /> Right Assets
             </h1>
             
             <p 
