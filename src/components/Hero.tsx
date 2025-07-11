@@ -88,12 +88,12 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-cover p-" 
+      className="overflow-hidden relative bg-contain bg-no-repeat md:bg-cover" 
       id="hero" 
       style={{
         backgroundImage: 'url("/WebBanner.jpg")',
         backgroundPosition: 'center 30%', 
-        padding: isMobile ? '100px 12px 40px' : '120px 20px 60px'
+        padding: isMobile ? '100px 12px 0px' : '120px 20px 60px'
       }}
     >
       <div className="absolute inset-0 bg-black/35"></div>      
@@ -103,12 +103,12 @@ const Hero = () => {
             
             
             <h1 
-              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in text-gray-200" 
+              className="section-title text-3xl sm:text-3xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in text-gray-200" 
               style={{ animationDelay: "0.3s" }}
             >
               Where Ai & Experts Unite 
               To Grow Your
-              <span className="text-red-600"> Savings</span> With
+              <span className="text-emerald-600"> Savings</span> With
               the<br className="hidden sm:inline" /> Right Assets
             </h1>
             
@@ -124,7 +124,7 @@ const Hero = () => {
               style={{ animationDelay: "0.7s" }}
             >
               <a 
-                href="#get-access" 
+                href="/auth" 
                 className="flex items-center justify-center group w-full sm:w-auto text-center" 
                 style={{
                   backgroundColor: '#50C878',

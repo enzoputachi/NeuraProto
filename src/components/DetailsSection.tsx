@@ -27,7 +27,7 @@ const sections = [
     bgImage: "/Bonds.jpeg",
   },
   {
-    title: "/Commodities",
+    title: "Commodities",
     text:
       "Commodities are raw materials like oil, gas, and wheat. Investing in them can protect against inflation and market changes.",
     bgImage: "/Seeds.jpg",
@@ -44,7 +44,7 @@ const FadeInBlock = ({ title, text, bgImage }) => {
     <div
       ref={ref}
       className={`h-[15rem] w-[25rem] flex-shrink-0 text-white bg-white border rounded-lg flex flex-col justify-end p-4 transition-all duration-700 ease-in-out transform relative overflow-hidden
-        ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-52"}`}
+        ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-32"}`}
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
