@@ -7,15 +7,15 @@ const VideoShowcaseSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 animate-on-scroll">
         </div>
         
-        <div className="flex flex-col items-center border rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
+        <div className="flex flex-col items-center rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
           <div className="w-full overflow-hidden rounded-xl">
             <video 
               src="/growth.mp4" 
               autoPlay
               loop
+              muted
               playsInline
-              controls
-              className="w-full bg-black mt-10 max-h-[500px] object-contain"
+              className="w-full bg-black mt-10 max-h-[400px] object-contain"
               poster="/image.png"
             >
               <source src="/growth.mp4" type="video/mp4" />

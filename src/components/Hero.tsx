@@ -91,14 +91,12 @@ const Hero = () => {
       className="overflow-hidden relative bg-cover p-" 
       id="hero" 
       style={{
-        backgroundImage: 'url("/stock.jpg")',
+        backgroundImage: 'url("/WebBanner.jpg")',
         backgroundPosition: 'center 30%', 
         padding: isMobile ? '100px 12px 40px' : '120px 20px 60px'
       }}
     >
-      <div className="absolute inset-0 bg-black/35"></div>
-      {/* <div className="absolute -top-[0%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div> */}
-      
+      <div className="absolute inset-0 bg-black/35"></div>      
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2">
@@ -160,14 +158,14 @@ const Hero = () => {
               <>
               <div className="absolute inset-0 bg-dark-900 rounded-2xl sm:rounded-3xl -z-10 shadow-xl"></div>
               <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
-                <img 
+                {/* <img 
                   ref={imageRef} 
                   src="/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.pn" 
                   alt="Atlas Robot" 
                   className="w-full h-auto object-cover transition-transform duration-500 ease-out" 
                   style={{ transformStyle: 'preserve-3d' }} 
-                />
-                <div className="absolute inset-0" style={{ backgroundImage: 'url("/hero-image.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'overlay', opacity: 0.5 }}></div>
+                /> */}
+                {/* <div className="absolute inset-0" style={{ backgroundImage: 'url("/hero-image.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'overlay', opacity: 0.5 }}></div> */}
               </div>
               </>
             )}

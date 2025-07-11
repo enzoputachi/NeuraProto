@@ -43,11 +43,11 @@ const sections = [
     return (<section id="details" className="p-4 sm:p-6 lg:p-8">
         <div
           ref={ref}
-          className={`h-[15rem] w-[25rem] mx-auto flex flex-col justify-between p-4  transition-all duration-700 ease-in-out transform
+          className={`h-[15rem] w-[25rem] text-black bg-white border rounded-lg mx-auto flex flex-col justify-between p-4  transition-all duration-700 ease-in-out transform
         ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
         >
           <h2 className="text-4xl font-semibold mb-2 ">{title}</h2>
-          <p className="text-2xl">{text}</p>
+          <p className="text">{text}</p>
         </div>
       </section>);
   }
