@@ -35,10 +35,10 @@ const Login = ({ onToggleMode }: LoginProps) => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full max-w-md mx- border p-9 rounded-2xl">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">Welcome back</h2>
-        <p className="text-gray-600 mt-2">Sign in to your investment account</p>
+        <h2 className="text-3xl font-bold text-gray-50">Welcome back</h2>
+        <p className="text-gray-60 mt-2">Sign in to your investment account</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -83,7 +83,7 @@ const Login = ({ onToggleMode }: LoginProps) => {
 
         <Button 
           type="submit" 
-          className="w-full bg-pulse-500 hover:bg-pulse-600"
+          className="w-full bg-emerald-500 hover:bg-emerald-600"
           disabled={isLoading}
         >
           {isLoading ? 'Signing in...' : 'Sign in'}
@@ -94,7 +94,7 @@ const Login = ({ onToggleMode }: LoginProps) => {
         <button
           type="button"
           onClick={onToggleMode}
-          className="text-pulse-500 hover:text-pulse-600 font-medium"
+          className="text-emerald-500 hover:text-emerald-600 font-medium"
         >
           Don't have an account? Sign up
         </button>

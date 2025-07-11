@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -45,15 +44,15 @@ const Signup = ({ onToggleMode }: SignupProps) => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">Create account</h2>
-        <p className="text-gray-600 mt-2">Join us and start your journey</p>
+    <div className="w-full max-w-sm mx-auto border rounded-2xl p-6">
+      <div className="text-center mb-4">
+        <h2 className="text-xl font-bold text-gray-50">Create account</h2>
+        <p className="text-gray-60 mt-1 text-sm">Join us and start your journey</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-2">
-          <Label htmlFor="name">Full Name</Label>
+      <div className="space-y-3">
+        <div className="space-y-1">
+          <Label htmlFor="name" className="text-sm">Full Name</Label>
           <div className="relative">
             <Input
               id="name"
@@ -62,15 +61,15 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Enter your full name"
               value={formData.name}
               onChange={handleChange}
-              className="pl-10"
+              className="pl-8 h-8 text-sm"
               required
             />
-            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <User className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
           </div>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+        <div className="space-y-1">
+          <Label htmlFor="email" className="text-sm">Email</Label>
           <div className="relative">
             <Input
               id="email"
@@ -79,15 +78,15 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
-              className="pl-10"
+              className="pl-8 h-8 text-sm"
               required
             />
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Mail className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
           </div>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+        <div className="space-y-1">
+          <Label htmlFor="password" className="text-sm">Password</Label>
           <div className="relative">
             <Input
               id="password"
@@ -96,22 +95,22 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Create a password"
               value={formData.password}
               onChange={handleChange}
-              className="pl-10 pr-10"
+              className="pl-8 pr-8 h-8 text-sm"
               required
             />
-            <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Lock className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
             >
-              {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              {showPassword ? <EyeOff className="h-3 w-3" /> : <Eye className="h-3 w-3" />}
             </button>
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="confirmPassword">Confirm Password</Label>
+          <Label htmlFor="confirmPassword" className="text-sm">Confirm Password</Label>
           <div className="relative">
             <Input
               id="confirmPassword"
@@ -120,34 +119,35 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Confirm your password"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="pl-10 pr-10"
+              className="pl-8 pr-8 h-8 text-sm"
               required
             />
-            <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Lock className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
             >
-              {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              {showConfirmPassword ? <EyeOff className="h-3 w-3" /> : <Eye className="h-3 w-3" />}
             </button>
           </div>
         </div>
 
         <Button 
           type="submit" 
-          className="w-full bg-pulse-500 hover:bg-pulse-600"
+          onClick={handleSubmit}
+          className="w-full bg-emerald-500 hover:bg-emerald-600 h-8 text-sm"
           disabled={isLoading}
         >
           {isLoading ? 'Creating account...' : 'Create account'}
         </Button>
-      </form>
+      </div>
 
-      <div className="mt-6 text-center">
+      <div className="mt-4 text-center">
         <button
           type="button"
           onClick={onToggleMode}
-          className="text-pulse-500 hover:text-pulse-600 font-medium"
+          className="text-emerald-500 hover:text-emerald-600 font-medium text-sm"
         >
           Already have an account? Sign in
         </button>
