@@ -2,12 +2,12 @@ import React from "react";
 
 const VideoShowcaseSection = () => {
   return (
-    <section className="w-full pt-0 pb-8 sm:pb-12" id="showcase">
+    <section className="w-full pb-8 sm:pb-12" id="showcase">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 animate-on-scroll">
         </div>
         
-        <div className="flex flex-col items-center rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
+        <div className="flex flex-col items-center  rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
           <div className="w-full overflow-hidden rounded-xl">
             <video 
               src="/growth.mp4" 

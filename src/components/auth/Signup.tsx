@@ -50,7 +50,7 @@ const Signup = ({ onToggleMode }: SignupProps) => {
         <p className="text-gray-60 mt-1 text-sm">Join us and start your journey</p>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-4">
         <div className="space-y-1">
           <Label htmlFor="name" className="text-sm">Full Name</Label>
           <div className="relative">
@@ -61,7 +61,7 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Enter your full name"
               value={formData.name}
               onChange={handleChange}
-              className="pl-8 h-8 text-sm"
+              className="pl-8 text-sm text-black"
               required
             />
             <User className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
@@ -78,7 +78,7 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
-              className="pl-8 h-8 text-sm"
+              className="pl-8 sm:h-0 md:h-8 text-sm text-black"
               required
             />
             <Mail className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
@@ -95,7 +95,7 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Create a password"
               value={formData.password}
               onChange={handleChange}
-              className="pl-8 pr-8 h-8 text-sm"
+              className="pl-8 pr-8 sm:h-0 md:h-8 text-sm text-black"
               required
             />
             <Lock className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
@@ -119,7 +119,7 @@ const Signup = ({ onToggleMode }: SignupProps) => {
               placeholder="Confirm your password"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="pl-8 pr-8 h-8 text-sm"
+              className="pl-8 pr-8 sm:h-0 md:h-8 text-sm text-black"
               required
             />
             <Lock className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 h-3 w-3" />
@@ -132,11 +132,11 @@ const Signup = ({ onToggleMode }: SignupProps) => {
             </button>
           </div>
         </div>
-
+        <br />
         <Button 
           type="submit" 
           onClick={handleSubmit}
-          className="w-full bg-emerald-500 hover:bg-emerald-600 h-8 text-sm"
+          className="w-full bg-emerald-500 hover:bg-emerald-600 sm:h-0 md:h-8 text-sm"
           disabled={isLoading}
         >
           {isLoading ? 'Creating account...' : 'Create account'}
