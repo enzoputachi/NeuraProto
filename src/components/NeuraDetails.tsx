@@ -26,25 +26,16 @@ const NeuraDetails = () => {
           <br />
           Experts & Ai powered Insights.
         </h1>
-        
-        {/* <p className="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
-          Smarter Investing For Individuals & Cooperatives
-          Whether you are a newbie to investing, a seasoned investor or an organization, we can be your winning touch towards maximizing returns monthly!
-        </p> */}
+
 
         <div className="bg-white rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
           <div className="flex items-start space-x-3 sm:space-x-4">
-            {/* <div className="bg-green-600 p-2 rounded-lg flex-shrink-0">
-              <div className="w-4 h-4 sm:w-6 sm:h-6 bg-white rounded grid grid-cols-2 gap-1 p-1">
-              </div>
-            </div> */}
+
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-2 text-gray-800">
                 Smarter Investing for Organizations and Cooperatives
               </h3>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                Smarter Investing For Individuals & Cooperatives
-
                 Whether you are a newbie to investing, a seasoned investor or an organization, 
                 we can be your winning touch towards maximizing returns monthly!
               </p>
