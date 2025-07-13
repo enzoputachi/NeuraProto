@@ -30,13 +30,13 @@ const NeuraDetails = () => {
           Experts & AI powered Insights.
         </h1>
 
-        <div className="bg-white rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
+        <div className="bg-[#12002A] w-[33rem] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
           <div className="flex items-start space-x-3 sm:space-x-4">
             <div className="flex-1">
-              <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 text-gray-800 leading-snug">
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 text-white leading-snug">
                 Smarter Investing for Organizations and Cooperatives
               </h3>
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              <p className="text-gray-10 text-xs sm:text-sm leading-relaxed">
                 Whether you are a newbie to investing, a seasoned investor or an organization, 
                 we can be your winning touch towards maximizing returns monthly!
               </p>
@@ -44,7 +44,7 @@ const NeuraDetails = () => {
           </div>
         </div>
 
-        <button className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95">
+        <button className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95">
           LEARN MORE
         </button>
       </div>

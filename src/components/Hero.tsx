@@ -91,7 +91,7 @@ const Hero = () => {
       className="overflow-hidden relative bg-contain bg-no-repeat md:bg-cover" 
       id="hero" 
       style={{
-        backgroundImage: 'url("/WebBanner.jpg")',
+        backgroundImage: 'url("/Webbanner.png")',
         backgroundPosition: 'center 30%', 
         padding: isMobile ? '100px 12px 0px' : '120px 20px 60px'
       }}
@@ -108,7 +108,7 @@ const Hero = () => {
             >
               Where Ai & Experts Unite 
               To Grow Your
-              <span className="text-emerald-600"> Savings</span> With
+              <span className="text-[#E20000]"> Savings</span> With
               the<br className="hidden sm:inline" /> Right Assets
             </h1>
             
@@ -127,7 +127,7 @@ const Hero = () => {
                 href="/auth" 
                 className="flex items-center justify-center group w-full sm:w-auto text-center" 
                 style={{
-                  backgroundColor: '#50C878',
+                  backgroundColor: '#E20000',
                   borderRadius: '1440px',
                   boxSizing: 'border-box',
                   color: '#FFFFFF',
@@ -138,7 +138,7 @@ const Hero = () => {
                   border: '1px solid white',
                 }}
               >
-                {/* Request Access */}
+                Get Started
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
@@ -173,7 +173,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div> */}
     </section>
   );
 };

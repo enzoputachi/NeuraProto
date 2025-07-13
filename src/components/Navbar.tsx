@@ -53,12 +53,12 @@ const Navbar = () => {
             e.preventDefault();
             scrollToTop();
           }}
-          aria-label="Pulse Robot"
+          aria-label="NeuraBridge"
         >
           <img 
-            src="/logo.svg" 
-            // alt="Pulse Robot Logo" 
-            className="h-7 sm:h-8" 
+            src="/logo.png" 
+            // alt="NeuraBridge Logo" 
+            className="h-8 sm:h-10 rounded-3xl" 
           />
         </a>
 
@@ -78,7 +78,7 @@ const Navbar = () => {
           <a href="#details" className="nav-link">Contact</a>
           <Link 
             to="/auth" 
-            className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition-colors duration-300"
+            className="flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full transition-colors duration-300"
           >
             <LogIn size={16} />
             <span>Sign In</span>
@@ -135,7 +135,7 @@ const Navbar = () => {
           </a>
             <Link 
             to="/auth" 
-            className="flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white py-3 px-6 w-full text-center rounded-lg transition-colors duration-300"
+            className="flex items-center justify-center space-x-2 bg-red-500 hover:bg-red-600 text-white py-3 px-6 w-full text-center rounded-lg transition-colors duration-300"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
