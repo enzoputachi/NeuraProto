@@ -136,7 +136,7 @@ const Signup = ({ onToggleMode }: SignupProps) => {
         <Button 
           type="submit" 
           onClick={handleSubmit}
-          className="w-full bg-emerald-500 hover:bg-emerald-600 sm:h-0 md:h-8 text-sm"
+          className="w-full bg-red-500 hover:bg-red-600 sm:h-0 md:h-8 text-sm"
           disabled={isLoading}
         >
           {isLoading ? 'Creating account...' : 'Create account'}
@@ -147,7 +147,7 @@ const Signup = ({ onToggleMode }: SignupProps) => {
         <button
           type="button"
           onClick={onToggleMode}
-          className="text-emerald-500 hover:text-emerald-600 font-medium text-sm"
+          className="text-red-500 hover:text-red-600 font-medium text-sm"
         >
           Already have an account? Sign in
         </button>

@@ -91,7 +91,7 @@ const Features = () => {
     <section className="py-12 sm:py-16 md:py-0 pb-0 relative " id="features" ref={sectionRef}>
       <div className="section-container">
         <div className="text-center mb-10 sm:mb-16">
-          <div className="text-white mx-auto mb-3 sm:mb-4 opacity-0 fade-in-element">
+          <div className="text-white mx-auto w-[15rem] mb-3 sm:mb-4 opacity-0 fade-in-element border p-2">
             <span>Our <span className="text-red-600">Offers</span></span>
           </div>
           <h2 className="section-title mb-3 sm:mb-4 opacity-0 fade-in-element">

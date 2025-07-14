@@ -83,7 +83,7 @@ const Login = ({ onToggleMode }: LoginProps) => {
 
         <Button 
           type="submit" 
-          className="w-full bg-emerald-500 hover:bg-emerald-600"
+          className="w-full bg-red-500 hover:bg-red-600"
           disabled={isLoading}
         >
           {isLoading ? 'Signing in...' : 'Sign in'}
@@ -94,7 +94,7 @@ const Login = ({ onToggleMode }: LoginProps) => {
         <button
           type="button"
           onClick={onToggleMode}
-          className="text-emerald-500 hover:text-emerald-600 font-medium"
+          className="text-red-500 hover:text-red-600 font-medium"
         >
           Don't have an account? Sign up
         </button>
