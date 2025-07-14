@@ -120,8 +120,8 @@ const Dashboard = () => {
           {/* Header */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
             <div>
-              <h1 className="text-3xl font-bold text-white">Portfolio Dashboard</h1>
-              <p className="text-[#B0B0B0] mt-1">High volatility market conditions - VIX 30</p>
+              <h1 className="text-3xl font-bold text-white">Market Intelligence</h1>
+              <p className="text-[#B0B0B0] mt-1">Get a sneak peek into recent market activities powered by AI</p>
             </div>
             <div className="flex items-center gap-3">
               <Badge variant="outline" className="bg-[#FF5252]/10 border-[#FF5252] text-[#FF5252]">
@@ -137,11 +137,11 @@ const Dashboard = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-[#B0B0B0] text-sm font-medium">Total Value</p>
-                    <p className="text-3xl font-bold text-white mt-1">$283,200</p>
+                    <p className="text-[#B0B0B0] text-sm font-medium">Current Top Gainers</p>
+                    <p className="text-3xl font-bold text-white mt-1">5</p>
                   </div>
                   <div className="h-12 w-12 bg-[#2979FF]/10 rounded-lg flex items-center justify-center">
-                    <DollarSign className="h-6 w-6 text-[#2979FF]" />
+                    {/* <DollarSign className="h-6 w-6 text-[#2979FF]" /> */}1D
                   </div>
                 </div>
               </CardContent>
@@ -151,8 +151,8 @@ const Dashboard = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-[#B0B0B0] text-sm font-medium">Total Returns</p>
-                    <p className="text-3xl font-bold text-[#21C96E] mt-1">+$175,662</p>
+                    <p className="text-[#B0B0B0] text-sm font-medium">Average % Growth - Top Gainers</p>
+                    {/* <p className="text-3xl font-bold text-[#21C96E] mt-1">+$175,662</p> */}
                     <p className="text-[#21C96E] text-sm flex items-center mt-1">
                       <ArrowUpRight className="w-3 h-3 mr-1" />
                       +163.4%
@@ -169,9 +169,9 @@ const Dashboard = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-[#B0B0B0] text-sm font-medium">Est. Dividend</p>
+                    <p className="text-[#B0B0B0] text-sm font-medium">Volume Of Trades</p>
                     <p className="text-3xl font-bold text-white mt-1">$4,898</p>
-                    <p className="text-[#B0B0B0] text-sm mt-1">/year</p>
+                    <p className="text-[#B0B0B0] text-sm mt-1">previous market open</p>
                   </div>
                   <div className="h-12 w-12 bg-[#2979FF]/10 rounded-lg flex items-center justify-center">
                     <Activity className="h-6 w-6 text-[#2979FF]" />
@@ -189,7 +189,7 @@ const Dashboard = () => {
               <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl ">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <CardTitle className="text-xl font-semibold text-white">Portfolio Performance - High Volatility</CardTitle>
+                    <CardTitle className="text-xl font-semibold text-white">Top Gainers</CardTitle>
                     <Tabs value={activeTimeframe} onValueChange={setActiveTimeframe} className="w-auto">
                       <TabsList className="bg-[#23272F] border-[#2A2F36]">
                         {['7D', '1M', '3M', 'YTD', '1Y'].map((period) => (
@@ -334,7 +334,7 @@ const Dashboard = () => {
               </div>
 
               {/* My Screeners */}
-              <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
+              {/* <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
                 <CardHeader>
                   <div className="flex justify-between items-center">
                     <CardTitle className="text-lg font-semibold text-white">My Screeners</CardTitle>
@@ -355,14 +355,14 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
 
             {/* Insights Sidebar - Takes up 1 column */}
             <div className="lg:col-span-1">
               <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
                 <CardHeader>
-                  <CardTitle className="text-lg font-semibold text-white">Market Insights</CardTitle>
+                  <CardTitle className="text-lg font-semibold text-white">Ai Insights Today <br /> + Expert Feedback</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {insights.map((insight, index) => (
