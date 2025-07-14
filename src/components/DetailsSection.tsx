@@ -47,24 +47,26 @@ const FadeInBlock = ({ title, text, bgImage }) => {
   });
 
   return (
-    <div
-      ref={ref}
-      className={`h-[15rem] w-[25rem] flex-shrink-0 text-white bg-white border rounded-lg flex flex-col justify-end p-4 transition-all duration-700 ease-in-out transform relative overflow-hidden
-        ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-32"}`}
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div className="border flex flex-col justify-between bg-[#12002A] rounded-lg">
+      <div
+        ref={ref}
+        className={`h-[15rem] w-[25rem] flex-shrink-0 text-white bg-white border rounded-lg flex flex-col justify-end p-4 transition-all duration-700 ease-in-out transform relative overflow-hidden
+          ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-32"}`}
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       
-      {/* Content */}
-      <div className="relative z-10">
-        <h2 className="text-4xl font-semibold mb-2 text-white drop-shadow-lg">{title}</h2>
-        <p className="text-white drop-shadow-md">{text}</p>
+        {/* Content */}
+      </div>
+      <div className="p-4">
+          <h2 className="text-4xl font-semibold mb-2 text-white drop-shadow-lg">{title}</h2>
+          <p className="text-white drop-shadow-md">{text}</p>
       </div>
     </div>
   );
