@@ -125,10 +125,10 @@ const Hero = () => {
             >
               <a 
                 href="/auth" 
-                className="flex items-center justify-center group w-full sm:w-auto text-center" 
+                className="flex items-center rounded-none justify-center group w-full sm:w-auto text-center" 
                 style={{
                   backgroundColor: '#E20000',
-                  borderRadius: '1440px',
+                  borderRadius: '10px',
                   boxSizing: 'border-box',
                   color: '#FFFFFF',
                   cursor: 'pointer',
