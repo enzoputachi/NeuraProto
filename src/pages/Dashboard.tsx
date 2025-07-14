@@ -28,6 +28,7 @@ import {
   User,
   ExternalLink
 } from 'lucide-react';
+import DashboardFooter from '@/components/dashboard/DashboardFooter';
 
 const Dashboard = () => {
   const [activeTimeframe, setActiveTimeframe] = useState('1M');
@@ -388,6 +389,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <DashboardFooter />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 
-import React from "react";
-const MadeByHumans = () => {
+const DashboardFooter = () => {
   return (
     <section id="" className="w-full p-4 justify-between">
       <div className=" flex flex-col sm:flex-row border">
@@ -24,5 +23,6 @@ const MadeByHumans = () => {
       <div className="w-[100%] top-[195rem] bg-[#C9A4FE] h-14 rounded-b-2xl  bottom-0"></div>
     </section>
   );
-};
-export default MadeByHumans;
+}
+
+export default DashboardFooter
