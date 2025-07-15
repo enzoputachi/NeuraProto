@@ -18,25 +18,16 @@ const NeuraDetails = () => {
       <div className="w-full lg:flex-1 lg:max-w-xl lg:ml-12">
         
         <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
-          Know Exactly Which Assets
-          <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>
-          To Invest In Every Month With   
-          <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>
-          Trusted Recommendations From 
-          <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>
-          Experts & AI powered Insights.
+          Know Exactly Which Assets To Invest In Every Month With Trusted Recommendations From Experts & AI powered Insights.
         </h1>
 
-        <div className="bg-[#12002A] md:w-[33rem] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
+        <div className="bg-[#12002A] w-full max-w-full sm:max-w-lg lg:max-w-xl rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
           <div className="flex items-start space-x-3 sm:space-x-4">
             <div className="flex-1">
               <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 text-white leading-snug">
                 Smarter Investing for Organizations and Cooperatives
               </h3>
-              <p className="text-gray-10 text-xs sm:text-sm leading-relaxed">
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                 Whether you are a newbie to investing, a seasoned investor or an organization, 
                 we can be your winning touch towards maximizing returns monthly!
               </p>

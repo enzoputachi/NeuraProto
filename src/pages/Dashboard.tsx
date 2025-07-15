@@ -308,55 +308,58 @@ const Dashboard = () => {
                   <CardHeader>
                     <CardTitle className="text-lg font-semibold text-white">My Updates</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    {topStocks.slice(0, 4).map((stock, index) => (
-                      <div key={index} className="flex justify-between items-center">
-                        <div className="flex flex-col">
-                          <span className="text-[#EAEAEA] text-sm font-medium">{stock.symbol}</span>
-                          <span className="text-[#B0B0B0] text-xs">Fair Value: ${stock.fairValue}</span>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-[#EAEAEA] text-sm font-medium">${stock.price}</div>
-                          <div className={`text-xs flex items-center ${
-                            stock.change > 0 ? 'text-[#21C96E]' : 'text-[#FF5252]'
-                          }`}>
-                            {stock.change > 0 ? (
-                              <ArrowUpRight className="w-3 h-3 mr-1" />
-                            ) : (
-                              <ArrowDownRight className="w-3 h-3 mr-1" />
-                            )}
-                            {stock.changePercent > 0 ? '+' : ''}{stock.changePercent}%
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                  <CardContent className="p-0">
+                    <div className="overflow-hidden">
+                      <table className="w-full">
+                        <thead>
+                          <tr className="border-b border-[#2A2F36]">
+                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-3">S/N</th>
+                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-3">STOCK</th>
+                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-3">WTD GAIN</th>
+                            <th className="text-right text-xs font-medium text-[#B0B0B0] p-3">CLOSING PRICE (₦)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { sn: 1, stock: 'FTNCOCOA', gain: '60.60%', price: '7.50', logo: 'https://via.placeholder.com/32x32/21C96E/FFFFFF?text=FT' },
+                            { sn: 2, stock: 'REDSTAREX', gain: '60.57%', price: '13.44', logo: 'https://via.placeholder.com/32x32/FF5252/FFFFFF?text=RS' },
+                            { sn: 3, stock: 'OMATEK', gain: '60.44%', price: '1.46', logo: 'https://via.placeholder.com/32x32/2979FF/FFFFFF?text=OM' },
+                            { sn: 4, stock: 'CILEASING', gain: '60.33%', price: '8.77', logo: 'https://via.placeholder.com/32x32/FF9800/FFFFFF?text=CI' },
+                            { sn: 5, stock: 'MEYER', gain: '60.07%', price: '23.45', logo: 'https://via.placeholder.com/32x32/9C27B0/FFFFFF?text=MY' },
+                          ].map((stock, index) => (
+                            <tr key={index} className="border-b border-[#2A2F36] hover:bg-[#23272F]/50">
+                              <td className="text-[#B0B0B0] text-sm p-3">{stock.sn}</td>
+                              <td className="p-3">
+                                <div className="flex items-center gap-2">
+                                  <img 
+                                    src={stock.logo} 
+                                    alt={`${stock.stock} logo`}
+                                    className="w-8 h-8 rounded-full object-cover"
+                                    onError={(e) => {
+                                      // Fallback to colored circle with initials if image fails to load
+                                      e.target.style.display = 'none';
+                                      e.target.nextSibling.style.display = 'flex';
+                                    }}
+                                  />
+                                  <div 
+                                    className="w-8 h-8 rounded-full bg-gradient-to-br from-[#21C96E] to-[#16A055] flex items-center justify-center text-white text-xs font-bold"
+                                    style={{ display: 'none' }}
+                                  >
+                                    {stock.stock.substring(0, 2)}
+                                  </div>
+                                  <span className="text-[#EAEAEA] text-sm font-medium">{stock.stock}</span>
+                                </div>
+                              </td>
+                              <td className="text-[#21C96E] text-sm font-medium p-3">{stock.gain}</td>
+                              <td className="text-[#EAEAEA] text-sm text-right p-3">{stock.price}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
-
-              {/* My Screeners */}
-              {/* <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
-                <CardHeader>
-                  <div className="flex justify-between items-center">
-                    <CardTitle className="text-lg font-semibold text-white">My Screeners</CardTitle>
-                    <Button variant="outline" className="border-[#2979FF] text-[#2979FF] hover:bg-[#2979FF]/10">
-                      New screener
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-[#23272F] rounded-lg border border-[#2A2F36]">
-                      <h4 className="text-[#EAEAEA] font-medium mb-2">Saved Screeners</h4>
-                      <p className="text-[#B0B0B0] text-sm">3 active screeners</p>
-                    </div>
-                    <div className="p-4 bg-[#23272F] rounded-lg border border-[#2A2F36]">
-                      <h4 className="text-[#EAEAEA] font-medium mb-2">New Companies Last 7d</h4>
-                      <p className="text-[#B0B0B0] text-sm">12 new matches</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card> */}
             </div>
 
             {/* Insights Sidebar - Takes up 1 column */}
