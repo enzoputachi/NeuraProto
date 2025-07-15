@@ -30,6 +30,7 @@ import {
   Bell,
   Search
 } from 'lucide-react';
+import DashboardFooter from '@/components/dashboard/DashboardFooter';
 
 const Dashboard = () => {
   const [activeTimeframe, setActiveTimeframe] = useState('1M');
@@ -396,13 +397,14 @@ const Dashboard = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#1A1D23] border-t border-[#2A2F36] mt-8 py-6">
+      {/* <footer className="bg-[#1A1D23] border-t border-[#2A2F36] mt-8 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center text-[#B0B0B0] text-sm">
             © 2024 MarketAI Dashboard. All rights reserved.
           </div>
         </div>
-      </footer>
+      </footer> */}
+       <DashboardFooter />
     </div>
   );
 };
