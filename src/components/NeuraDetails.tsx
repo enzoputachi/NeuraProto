@@ -2,7 +2,7 @@ import React from 'react';
 
 const NeuraDetails = () => {
   return (
-    <section className="flex flex-col lg:flex-row lg:justify-evenly lg:items-center text-white px-4 py-6 sm:px-6 sm:py-8 lg:p-8">
+    <section className="flex flex-col lg:flex-row lg:justify-evenly lg:items-center text-white px-4 py-6 sm:px-6 sm:py-8 lg:p-8 overflow-hidden">
       {/* Image Section */}
       <div className="w-full lg:flex-1 lg:max-w-md mb-6 lg:mb-0">
         <div className="relative bg-gradient-to-br rounded-lg p-3 sm:p-4 lg:p-6 shadow-2xl">
@@ -30,7 +30,7 @@ const NeuraDetails = () => {
           Experts & AI powered Insights.
         </h1>
 
-        <div className="bg-[#12002A] w-[33rem] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
+        <div className="bg-[#12002A] md:w-[33rem] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
           <div className="flex items-start space-x-3 sm:space-x-4">
             <div className="flex-1">
               <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 text-white leading-snug">

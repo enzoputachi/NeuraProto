@@ -50,7 +50,7 @@ const FadeInBlock = ({ title, text, bgImage }) => {
     <div className="border flex flex-col justify-between bg-[#12002A] rounded-lg">
       <div
         ref={ref}
-        className={`h-[15rem] w-[25rem] flex-shrink-0 text-white bg-white border rounded-lg flex flex-col justify-end p-4 transition-all duration-700 ease-in-out transform relative overflow-hidden
+        className={`h-[10rem] w-[18rem] flex-shrink-0 text-white bg-white border rounded-lg flex flex-col justify-end p-3 transition-all duration-700 ease-in-out transform relative overflow-hidden
           ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-32"}`}
         style={{
           backgroundImage: `url(${bgImage})`,
@@ -64,9 +64,9 @@ const FadeInBlock = ({ title, text, bgImage }) => {
       
         {/* Content */}
       </div>
-      <div className="p-4">
-          <h2 className="text-4xl font-semibold mb-2 text-white drop-shadow-lg">{title}</h2>
-          <p className="text-white drop-shadow-md">{text}</p>
+      <div className="p-3">
+          <h2 className="text-2xl font-semibold mb-2 text-white drop-shadow-lg">{title}</h2>
+          <p className="text-sm text-white drop-shadow-md">{text}</p>
       </div>
     </div>
   );
@@ -115,7 +115,7 @@ const DetailsSection = () => {
     >
       <div
         ref={containerRef}
-        className="flex overflow-x-auto space-x-6 px-4 py-6"
+        className="flex overflow-x-auto space-x-4 px-4 py-4"
         style={{ 
           scrollBehavior: "auto", // Changed from "smooth" to prevent conflicts
           scrollbarWidth: "none",
