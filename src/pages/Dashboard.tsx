@@ -31,6 +31,7 @@ import {
   Search
 } from 'lucide-react';
 import DashboardFooter from '@/components/dashboard/DashboardFooter';
+import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 
 const Dashboard = () => {
   const [activeTimeframe, setActiveTimeframe] = useState('1M');
@@ -109,7 +110,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-[#0E1116] text-white">
       {/* Mobile-optimized Navigation */}
-      <nav className="bg-[#1A1D23] border-b border-[#2A2F36] sticky top-0 z-50">
+      {/* <nav className="bg-[#1A1D23] border-b border-[#2A2F36] sticky top-0 z-50">
         <div className="px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -128,7 +129,9 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-      </nav>
+      </nav> */}
+
+      <DashboardNavbar />
 
       <div className="px-3 py-4 sm:px-6 sm:py-6">
         <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">

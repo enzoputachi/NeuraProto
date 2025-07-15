@@ -25,7 +25,7 @@ const DashboardFooter = () => {
           </p>
           
           <button className="bg-red-600 hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base w-full sm:w-auto sm:max-w-xs">
-            Start Profiting Now
+            Choose A Plan
           </button>
         </div>
       </div>
