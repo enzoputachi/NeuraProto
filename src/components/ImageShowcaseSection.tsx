@@ -24,9 +24,9 @@ const VideoShowcaseSection = () => {
               muted
               playsInline
               className="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[400px] object-contain bg-black"
-              poster="/image.png"
+              poster="/growth2.png"
             >
-              <source src="/growth.mp4" type="video/mp4" />
+              <source src="/growth2.mp4" type="video/mp4" />
             </video>
           </div>
           
