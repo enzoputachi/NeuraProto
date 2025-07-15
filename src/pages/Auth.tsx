@@ -26,14 +26,14 @@ const Auth = () => {
         aria-label="Go to home page"
       >
         <Home 
-          size={24} 
+          size={14} 
           className="text-white group-hover:text-gray-200 transition-colors duration-200" 
         />
       </button>
 
       <div className="max-w-md w-full space-y-8">
         {/* <Navbar /> */}
-        <div className="bg-black text-white rounded-2xl shadow-elegant p-8">
+        <div className="bg-black text-white rounded-2xl shadow-elegant md:p-8">
           {isLoginMode ? (
             <Login onToggleMode={toggleMode} />
           ) : (
