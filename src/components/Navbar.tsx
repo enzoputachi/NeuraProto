@@ -41,8 +41,8 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
+          ? "bg-white backdrop-blur-md shadow-sm" 
+          : "bg-white"
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -56,8 +56,7 @@ const Navbar = () => {
           aria-label="NeuraBridge"
         >
           <img 
-            src="/logo.png" 
-            // alt="NeuraBridge Logo" 
+            src="/logo.png"
             className="h-8 sm:h-10 rounded-3xl" 
           />
         </a>
@@ -97,10 +96,10 @@ const Navbar = () => {
 
       {/* Mobile Navigation - improved for better touch experience */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-40  flex bg-white flex-col pt-16 px- md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-8 items-center mt-8">
+        <nav className="flex flex-col space-y-8 items-center mt bg-white p-4">
           <a 
             href="#" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
@@ -135,7 +134,7 @@ const Navbar = () => {
           </a>
             <Link 
             to="/auth" 
-            className="flex items-center justify-center space-x-2 bg-red-500 hover:bg-red-600 text-white py-3 px-6 w-full text-center rounded-lg transition-colors duration-300"
+            className=" flex items-center justify-center space-x-2 bg-red-500 hover:bg-red-600 text-white py-3 px-6 w-full text-center rounded-lg transition-colors duration-300"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
