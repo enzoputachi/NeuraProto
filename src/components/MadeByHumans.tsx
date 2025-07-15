@@ -32,7 +32,7 @@ const MadeByHumans = () => {
       </div>
       
       {/* Bottom accent bar */}
-      <div className="w-full bg-purple-300 h-14 rounded-b-2xl mt-4"></div>
+      {/* <div className="w-full bg-purple-300 h-14 rounded-b-2xl mt-4"></div> */}
     </section>
   );
 };

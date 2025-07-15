@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import DashboardNavbar from '@/components/dashboard/DashboardNavbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -26,16 +25,17 @@ import {
   ArrowDownRight,
   Calendar,
   User,
-  ExternalLink
+  ExternalLink,
+  Menu,
+  Bell,
+  Search
 } from 'lucide-react';
-import DashboardFooter from '@/components/dashboard/DashboardFooter';
 
 const Dashboard = () => {
   const [activeTimeframe, setActiveTimeframe] = useState('1M');
 
   // Generate high-volatility portfolio data with frequent oscillations
   const generateVolatileData = () => {
-    const baseDate = new Date(2024, 9, 26); // October 26, 2024
     const data = [];
     let holdingsValue = 245000;
     let marketValue = 230000;
@@ -73,13 +73,6 @@ const Dashboard = () => {
 
   const portfolioData = generateVolatileData();
 
-  const topStocks = [
-    { symbol: 'AAPL', name: 'Apple Inc.', price: 189.95, change: +5.67, changePercent: +3.08, fairValue: 195.00 },
-    { symbol: 'MSFT', name: 'Microsoft Corp.', price: 378.85, change: +12.45, changePercent: +3.40, fairValue: 385.00 },
-    { symbol: 'GOOGL', name: 'Alphabet Inc.', price: 142.56, change: -2.34, changePercent: -1.62, fairValue: 150.00 },
-    { symbol: 'TSLA', name: 'Tesla Inc.', price: 234.12, change: +8.90, changePercent: +3.95, fairValue: 240.00 },
-  ];
-
   const marketSectors = [
     { name: 'Technology', performance: +12.5 },
     { name: 'Healthcare', performance: +8.3 },
@@ -114,90 +107,114 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-[#0E1116] text-white">
-      <DashboardNavbar />
-      <div className="p-4 sm:p-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-            <div>
-              <h1 className="text-3xl font-bold text-white">Market Intelligence</h1>
-              <p className="text-[#B0B0B0] mt-1">Get a sneak peek into recent market activities powered by AI</p>
-            </div>
+      {/* Mobile-optimized Navigation */}
+      <nav className="bg-[#1A1D23] border-b border-[#2A2F36] sticky top-0 z-50">
+        <div className="px-4 py-3">
+          <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Badge variant="outline" className="bg-[#FF5252]/10 border-[#FF5252] text-[#FF5252]">
-                <TrendingDown className="w-3 h-3 mr-1" />
-                High Volatility
-              </Badge>
+              <Button variant="ghost" size="sm" className="lg:hidden p-1 h-8 w-8">
+                <Menu className="h-5 w-5" />
+              </Button>
+              <div className="text-lg font-bold text-white">MarketAI</div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="sm" className="p-1 h-8 w-8">
+                <Search className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="sm" className="p-1 h-8 w-8">
+                <Bell className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div className="px-3 py-4 sm:px-6 sm:py-6">
+        <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
+          
+          {/* Mobile-optimized Header */}
+          <div className="space-y-3 sm:space-y-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center sm:gap-4">
+              <div className="space-y-1">
+                <h1 className="text-2xl sm:text-3xl font-bold text-white">Market Intelligence</h1>
+                <p className="text-sm sm:text-base text-[#B0B0B0]">Recent market activities powered by AI</p>
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Badge variant="outline" className="bg-[#FF5252]/10 border-[#FF5252] text-[#FF5252] text-xs">
+                  <TrendingDown className="w-3 h-3 mr-1" />
+                  High Volatility
+                </Badge>
+              </div>
             </div>
           </div>
 
-          {/* Top Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Mobile-optimized Summary Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-[#B0B0B0] text-sm font-medium">Current Top Gainers</p>
-                    <p className="text-3xl font-bold text-white mt-1">5</p>
+                  <div className="flex-1">
+                    <p className="text-[#B0B0B0] text-xs sm:text-sm font-medium">Current Top Gainers</p>
+                    <p className="text-xl sm:text-3xl font-bold text-white mt-1">5</p>
                   </div>
-                  <div className="h-12 w-12 bg-[#2979FF]/10 rounded-lg flex items-center justify-center">
-                    {/* <DollarSign className="h-6 w-6 text-[#2979FF]" /> */}1D
+                  <div className="h-10 w-10 sm:h-12 sm:w-12 bg-[#2979FF]/10 rounded-lg flex items-center justify-center text-xs sm:text-sm text-[#2979FF] font-medium">
+                    1D
                   </div>
                 </div>
               </CardContent>
             </Card>
             
             <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-[#B0B0B0] text-sm font-medium">Average % Growth - Top Gainers</p>
-                    {/* <p className="text-3xl font-bold text-[#21C96E] mt-1">+$175,662</p> */}
-                    <p className="text-[#21C96E] text-sm flex items-center mt-1">
+                  <div className="flex-1">
+                    <p className="text-[#B0B0B0] text-xs sm:text-sm font-medium">Avg % Growth - Top Gainers</p>
+                    <p className="text-[#21C96E] text-xs sm:text-sm flex items-center mt-1">
                       <ArrowUpRight className="w-3 h-3 mr-1" />
                       +163.4%
                     </p>
                   </div>
-                  <div className="h-12 w-12 bg-[#21C96E]/10 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="h-6 w-6 text-[#21C96E]" />
+                  <div className="h-10 w-10 sm:h-12 sm:w-12 bg-[#21C96E]/10 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 text-[#21C96E]" />
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
-              <CardContent className="p-6">
+            <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl sm:col-span-2 lg:col-span-1">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-[#B0B0B0] text-sm font-medium">Volume Of Trades</p>
-                    <p className="text-3xl font-bold text-white mt-1">$4,898</p>
-                    <p className="text-[#B0B0B0] text-sm mt-1">previous market open</p>
+                  <div className="flex-1">
+                    <p className="text-[#B0B0B0] text-xs sm:text-sm font-medium">Volume Of Trades</p>
+                    <p className="text-xl sm:text-3xl font-bold text-white mt-1">$4,898</p>
+                    <p className="text-[#B0B0B0] text-xs sm:text-sm mt-1">previous market open</p>
                   </div>
-                  <div className="h-12 w-12 bg-[#2979FF]/10 rounded-lg flex items-center justify-center">
-                    <Activity className="h-6 w-6 text-[#2979FF]" />
+                  <div className="h-10 w-10 sm:h-12 sm:w-12 bg-[#2979FF]/10 rounded-lg flex items-center justify-center">
+                    <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-[#2979FF]" />
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            {/* Main Chart Area - Takes up 3 columns */}
-            <div className="lg:col-span-3 space-y-6">
+          {/* Mobile-optimized Main Content */}
+          <div className="space-y-4 sm:space-y-6 lg:grid lg:grid-cols-4 lg:gap-6 lg:space-y-0">
+            
+            {/* Chart Section - Mobile first, then desktop 3 columns */}
+            <div className="space-y-4 sm:space-y-6 lg:col-span-3">
               
               {/* Performance Chart */}
-              <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl ">
-                <CardHeader className="pb-4">
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <CardTitle className="text-xl font-semibold text-white">Top Gainers</CardTitle>
-                    <Tabs value={activeTimeframe} onValueChange={setActiveTimeframe} className="w-auto">
-                      <TabsList className="bg-[#23272F] border-[#2A2F36]">
+              <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
+                <CardHeader className="pb-3 sm:pb-4">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center sm:gap-4">
+                    <CardTitle className="text-lg sm:text-xl font-semibold text-white">Top Gainers</CardTitle>
+                    <Tabs value={activeTimeframe} onValueChange={setActiveTimeframe} className="w-full sm:w-auto">
+                      <TabsList className="bg-[#23272F] border-[#2A2F36] w-full sm:w-auto grid grid-cols-5 sm:flex">
                         {['7D', '1M', '3M', 'YTD', '1Y'].map((period) => (
                           <TabsTrigger 
                             key={period} 
                             value={period}
-                            className="data-[state=active]:bg-[#2979FF] data-[state=active]:text-white text-[#B0B0B0]"
+                            className="data-[state=active]:bg-[#2979FF] data-[state=active]:text-white text-[#B0B0B0] text-xs sm:text-sm"
                           >
                             {period}
                           </TabsTrigger>
@@ -206,8 +223,8 @@ const Dashboard = () => {
                     </Tabs>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <div className="h-[400px] w-full text-sm">
+                <CardContent className="px-3 sm:px-6">
+                  <div className="h-[250px] sm:h-[400px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <AreaChart data={portfolioData}>
                         <defs>
@@ -219,21 +236,15 @@ const Dashboard = () => {
                             <stop offset="5%" stopColor="#B0BEC5" stopOpacity={0.05}/>
                             <stop offset="95%" stopColor="#B0BEC5" stopOpacity={0}/>
                           </linearGradient>
-                          <filter id="glow">
-                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                            <feMerge> 
-                              <feMergeNode in="coloredBlur"/>
-                              <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                          </filter>
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" stroke="#2A2F36" />
                         <XAxis 
                           dataKey="date" 
-                          fontSize={5}
+                          fontSize={10}
                           tickLine={false}
                           axisLine={false}
                           tick={{ fill: '#B0B0B0' }}
+                          interval="preserveStartEnd"
                         />
                         <YAxis 
                           fontSize={10}
@@ -247,7 +258,8 @@ const Dashboard = () => {
                             backgroundColor: '#23272F',
                             border: '1px solid #2A2F36',
                             borderRadius: '8px',
-                            color: '#EAEAEA'
+                            color: '#EAEAEA',
+                            fontSize: '12px'
                           }}
                           formatter={(value, name) => [
                             `$${value.toLocaleString()}`, 
@@ -269,7 +281,6 @@ const Dashboard = () => {
                           strokeWidth={2.5}
                           fill="url(#holdingsGradient)" 
                           dot={false}
-                          filter="url(#glow)"
                         />
                       </AreaChart>
                     </ResponsiveContainer>
@@ -277,17 +288,18 @@ const Dashboard = () => {
                 </CardContent>
               </Card>
 
-              {/* My Markets & My Updates */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Mobile-optimized Markets & Updates */}
+              <div className="space-y-4 sm:space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
+                
                 {/* My Markets */}
                 <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
-                  <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-white">My Markets & Industries</CardTitle>
+                  <CardHeader className="pb-3 sm:pb-4">
+                    <CardTitle className="text-base sm:text-lg font-semibold text-white">My Markets & Industries</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 sm:space-y-4">
                     {marketSectors.map((sector, index) => (
-                      <div key={index} className="flex justify-between items-center">
-                        <span className="text-[#EAEAEA] text-sm">{sector.name}</span>
+                      <div key={index} className="flex justify-between items-center py-1">
+                        <span className="text-[#EAEAEA] text-sm sm:text-base">{sector.name}</span>
                         <span className={`text-sm font-medium flex items-center ${
                           sector.performance > 0 ? 'text-[#21C96E]' : 'text-[#FF5252]'
                         }`}>
@@ -305,53 +317,40 @@ const Dashboard = () => {
 
                 {/* My Updates */}
                 <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
-                  <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-white">My Updates</CardTitle>
+                  <CardHeader className="pb-3 sm:pb-4">
+                    <CardTitle className="text-base sm:text-lg font-semibold text-white">My Updates</CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <div className="overflow-hidden">
-                      <table className="w-full">
+                    <div className="overflow-x-auto">
+                      <table className="w-full min-w-[400px]">
                         <thead>
                           <tr className="border-b border-[#2A2F36]">
-                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-3">S/N</th>
-                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-3">STOCK</th>
-                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-3">WTD GAIN</th>
-                            <th className="text-right text-xs font-medium text-[#B0B0B0] p-3">CLOSING PRICE (₦)</th>
+                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-2 sm:p-3">S/N</th>
+                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-2 sm:p-3">STOCK</th>
+                            <th className="text-left text-xs font-medium text-[#B0B0B0] p-2 sm:p-3">WTD GAIN</th>
+                            <th className="text-right text-xs font-medium text-[#B0B0B0] p-2 sm:p-3">PRICE (₦)</th>
                           </tr>
                         </thead>
                         <tbody>
                           {[
-                            { sn: 1, stock: 'FTNCOCOA', gain: '60.60%', price: '7.50', logo: 'https://via.placeholder.com/32x32/21C96E/FFFFFF?text=FT' },
-                            { sn: 2, stock: 'REDSTAREX', gain: '60.57%', price: '13.44', logo: 'https://via.placeholder.com/32x32/FF5252/FFFFFF?text=RS' },
-                            { sn: 3, stock: 'OMATEK', gain: '60.44%', price: '1.46', logo: 'https://via.placeholder.com/32x32/2979FF/FFFFFF?text=OM' },
-                            { sn: 4, stock: 'CILEASING', gain: '60.33%', price: '8.77', logo: 'https://via.placeholder.com/32x32/FF9800/FFFFFF?text=CI' },
-                            { sn: 5, stock: 'MEYER', gain: '60.07%', price: '23.45', logo: 'https://via.placeholder.com/32x32/9C27B0/FFFFFF?text=MY' },
+                            { sn: 1, stock: 'FTNCOCOA', gain: '60.60%', price: '7.50' },
+                            { sn: 2, stock: 'REDSTAREX', gain: '60.57%', price: '13.44' },
+                            { sn: 3, stock: 'OMATEK', gain: '60.44%', price: '1.46' },
+                            { sn: 4, stock: 'CILEASING', gain: '60.33%', price: '8.77' },
+                            { sn: 5, stock: 'MEYER', gain: '60.07%', price: '23.45' },
                           ].map((stock, index) => (
                             <tr key={index} className="border-b border-[#2A2F36] hover:bg-[#23272F]/50">
-                              <td className="text-[#B0B0B0] text-sm p-3">{stock.sn}</td>
-                              <td className="p-3">
+                              <td className="text-[#B0B0B0] text-xs sm:text-sm p-2 sm:p-3">{stock.sn}</td>
+                              <td className="p-2 sm:p-3">
                                 <div className="flex items-center gap-2">
-                                  <img 
-                                    src={stock.logo} 
-                                    alt={`${stock.stock} logo`}
-                                    className="w-8 h-8 rounded-full object-cover"
-                                    onError={(e) => {
-                                      // Fallback to colored circle with initials if image fails to load
-                                      e.target.style.display = 'none';
-                                      e.target.nextSibling.style.display = 'flex';
-                                    }}
-                                  />
-                                  <div 
-                                    className="w-8 h-8 rounded-full bg-gradient-to-br from-[#21C96E] to-[#16A055] flex items-center justify-center text-white text-xs font-bold"
-                                    style={{ display: 'none' }}
-                                  >
+                                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-[#21C96E] to-[#16A055] flex items-center justify-center text-white text-xs font-bold">
                                     {stock.stock.substring(0, 2)}
                                   </div>
-                                  <span className="text-[#EAEAEA] text-sm font-medium">{stock.stock}</span>
+                                  <span className="text-[#EAEAEA] text-xs sm:text-sm font-medium">{stock.stock}</span>
                                 </div>
                               </td>
-                              <td className="text-[#21C96E] text-sm font-medium p-3">{stock.gain}</td>
-                              <td className="text-[#EAEAEA] text-sm text-right p-3">{stock.price}</td>
+                              <td className="text-[#21C96E] text-xs sm:text-sm font-medium p-2 sm:p-3">{stock.gain}</td>
+                              <td className="text-[#EAEAEA] text-xs sm:text-sm text-right p-2 sm:p-3">{stock.price}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -362,15 +361,18 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* Insights Sidebar - Takes up 1 column */}
+            {/* AI Insights Sidebar */}
             <div className="lg:col-span-1">
               <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
-                <CardHeader>
-                  <CardTitle className="text-lg font-semibold text-white">Ai Insights Today <br /> + Expert Feedback</CardTitle>
+                <CardHeader className="pb-3 sm:pb-4">
+                  <CardTitle className="text-base sm:text-lg font-semibold text-white">
+                    AI Insights Today<br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>+ Expert Feedback
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6">
                   {insights.map((insight, index) => (
-                    <div key={index} className="space-y-3">
+                    <div key={index} className="space-y-2 sm:space-y-3">
                       <h4 className="text-[#EAEAEA] font-medium text-sm leading-tight">{insight.title}</h4>
                       <div className="flex items-center gap-2 text-xs text-[#B0B0B0]">
                         <User className="w-3 h-3" />
@@ -379,11 +381,11 @@ const Dashboard = () => {
                         <span>{insight.date}</span>
                       </div>
                       <p className="text-[#B0B0B0] text-xs leading-relaxed">{insight.summary}</p>
-                      <Button variant="ghost" size="sm" className="text-[#2979FF] hover:bg-[#2979FF]/10 p-0 h-auto">
+                      <Button variant="ghost" size="sm" className="text-[#2979FF] hover:bg-[#2979FF]/10 p-0 h-auto text-xs">
                         Continue reading
                         <ExternalLink className="w-3 h-3 ml-1" />
                       </Button>
-                      {index < insights.length - 1 && <div className="border-b border-[#2A2F36]" />}
+                      {index < insights.length - 1 && <div className="border-b border-[#2A2F36] pt-2 sm:pt-3" />}
                     </div>
                   ))}
                 </CardContent>
@@ -392,7 +394,15 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <DashboardFooter />
+
+      {/* Footer */}
+      <footer className="bg-[#1A1D23] border-t border-[#2A2F36] mt-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center text-[#B0B0B0] text-sm">
+            © 2024 MarketAI Dashboard. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
