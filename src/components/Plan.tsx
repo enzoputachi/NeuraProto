@@ -9,9 +9,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from 'react-router-dom';
 
 export default function PlanSelector() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const plans = [
     {
@@ -29,6 +31,10 @@ export default function PlanSelector() {
       charge: "Free Upfront\n10% Commission/Mo",
     },
   ];
+
+  const handlePlanSelect = () => {
+    navigate('/calculate');
+  }
 
   return (
     <div className="bg-black text-black py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-20 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center min-h-screen">
@@ -59,7 +65,7 @@ export default function PlanSelector() {
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className="bg-[#B2B4B3] text-black border border-gray-700 w-full md:w-80 max-w-sm mx-auto md:mx-0"
+              className="bg-white text-black border border-gray-700 w-full md:w-80 max-w-sm mx-auto md:mx-0"
             >
               <CardHeader className="pb-3">
                 <CardTitle className="text-black text-lg sm:text-xl text-center">
@@ -88,7 +94,7 @@ export default function PlanSelector() {
                   <DialogTrigger asChild>
                     <Button
                       className="bg-red-500 hover:bg-red-600 text-white w-full mt-4 py-2 text-sm sm:text-base font-semibold"
-                      onClick={() => setSelectedPlan(plan.name)}
+                      onClick={handlePlanSelect}
                     >
                       Select Plan
                     </Button>

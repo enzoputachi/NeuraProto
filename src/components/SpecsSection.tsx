@@ -48,33 +48,32 @@ const SpecsSection = () => {
               that provides insights helping you make the right choices weather
               stocks or agro-commodities!
             </h1>
-            <div className="flex flex-col lg:mt-10 lg:ml-8 lg:flex-row justify-between items-center max-w-7xl mx-auto px-6 gap-10">
-              {/* Left - Commodity List */}
-              <div className="flex flex-col gap-8 lg:max-w-2/3">
-                {commodities.map((commodity) => (
-                  <div
-                    key={commodity.id}
-                    onClick={() => setSelectedCommodity(commodity.id)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-tl-xl shadow-md transition-all duration-200 cursor-pointer
-                  ${
-                    selectedCommodity === commodity.id
-                    // ? "bg-gray-300 text-black border-cyan-400"
-                    // : "bg-[#B2B4B3] text-black border-transparent"
-                  }`}
-                  >
-                    <span className="text-base font-medium border w-full p-4 bg-white rounded-tl-xl text-black">
-                      {commodity.name}
-                    </span>
-                    <img
-                      src={commodity.icon}
-                      alt={commodity.name}
-                      className="w-20 h-20 object-cover rounded-full absolute left-[16rem]"
-                    />
-                  </div>
-                ))}
-              </div>
+
+            <div className="flex flex-col gap-5 w-full mt-20 lg:w-1/3">
+              {commodities.map((commodity) => (
+                <div
+                  key={commodity.id}
+                  onClick={() => setSelectedCommodity(commodity.id)}
+                  className={`flex items-center justify-between px-4 py-3 rounded-tl-xl shadow-md transition-all duration-200 cursor-pointer border
+                      ${
+                        selectedCommodity === commodity.id
+                          ? "bg-white text-black border-cyan-400 scale-105"
+                          : "bg-white text-black border-transparent"
+                      }`}
+                >
+                  <span className="text-base font-medium">
+                    {commodity.name}
+                  </span>
+                  <img
+                    src={commodity.icon}
+                    alt={commodity.name}
+                    className="w-8 h-8 object-cover rounded-full"
+                  />
+                </div>
+              ))}
             </div>
           </div>
+
           {/* Right - Rotating Globe */}
           <div className="relative lg:w-2/3 flex justify-center items-center">
             <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
