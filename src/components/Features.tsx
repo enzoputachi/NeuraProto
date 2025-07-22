@@ -41,7 +41,7 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
       ref={cardRef}
       className={cn(
         "feature-card glass-card opacity-0 p-4 sm:p-6",
-        "lg:hover:bg-gradient-to-br lg:hover:from-white lg:hover:to-pulse-50",
+        "bg-white",
         "transition-all duration-300"
       )}
       style={{ animationDelay: `${0.1 * index}s` }}
@@ -94,19 +94,13 @@ const Features = () => {
           <div className="text-white mx-auto w-[15rem] mb-3 sm:mb-4 opacity-0 fade-in-element border p-2">
             <span>Our <span className="text-red-600">Offers</span></span>
           </div>
-          <h2 className="section-title mb-3 sm:mb-4 opacity-0 fade-in-element">
-            {/* Advanced Intelligence, <br className="hidden sm:block" />Human-Like Intuition */}
-          </h2>
-          <p className="section-subtitle mx-auto opacity-0 fade-in-element">
-            {/* Built with cutting-edge technology to understand, learn, and adapt to your unique needs. */}
-          </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 ho">
           <FeatureCard
             icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6 stroke-red-700"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 1 1-4-4"></path><path d="M12 8a4 4 0 1 0 4 4"></path><circle cx="12" cy="12" r="1"></circle></svg>}
             title=""
-            description="Monthly Expert Recommendations
+            description="Daily Expert Recommendations
  "
             index={0}
           />

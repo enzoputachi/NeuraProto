@@ -30,7 +30,7 @@ const Login = ({ onToggleMode }: LoginProps) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8 ">
+    <div className="min-h-screen flex items-center justify-center md:px-4 py-8 ">
       <div className="w-full max-w-sm mx-auto">
         <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 sm:p-8 rounded-3xl shadow-xl">
           <div className="text-center mb-8">

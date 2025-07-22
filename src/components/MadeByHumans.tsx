@@ -16,17 +16,16 @@ const MadeByHumans = () => {
         {/* Content Container */}
         <div className="flex flex-col justify-center text-white p-4 sm:p-6 lg:p-8 w-full lg:w-1/2">
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight mb-4 sm:mb-6">
-            Join <span className="text-red-700">Millions</span> Growing Their
-            Wealth Monthly With The Stock Market!
+          <span className="text-red-700">Don't</span> Just Save!
+            
           </h2>
           
           <p className="text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 text-gray-200 leading-relaxed">
-            Earn up to 10% or more With Our AI-powered Daily
-            Recommendations/Insights.
+            Let's get you Investing your earnings in smart securities like stocks, commodities and much more
           </p>
           
           <button className="bg-red-600 hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base w-full sm:w-auto sm:max-w-xs">
-            Start Profiting Now
+            Get Started
           </button>
         </div>
       </div>

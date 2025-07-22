@@ -1,6 +1,13 @@
-import React from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 const NeuraDetails = () => {
+  const navigate = useNavigate();
+
+  const handleSignUp = () => {
+    navigate ("/auth")
+  }
+
   return (
     <section className="flex flex-col lg:flex-row lg:justify-evenly lg:items-center text-white px-4 py-6 sm:px-6 sm:py-8 lg:p-8 overflow-hidden">
       {/* Image Section */}
@@ -21,13 +28,13 @@ const NeuraDetails = () => {
           Know Exactly Which Assets To Invest In Every Month With Trusted Recommendations From Experts & AI powered Insights.
         </h1>
 
-        <div className="bg-[#12002A] w-full max-w-full sm:max-w-lg lg:max-w-xl rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
+        <div className="bg-[#fff] w-full max-w-full sm:max-w-lg lg:max-w-xl rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
           <div className="flex items-start space-x-3 sm:space-x-4">
             <div className="flex-1">
-              <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 text-white leading-snug">
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 text-black leading-snug">
                 Smarter Investing for Organizations and Cooperatives
               </h3>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+              <p className="text-gray-900 text-xs sm:text-sm leading-relaxed">
                 Whether you are a newbie to investing, a seasoned investor or an organization, 
                 we can be your winning touch towards maximizing returns monthly!
               </p>
@@ -35,8 +42,11 @@ const NeuraDetails = () => {
           </div>
         </div>
 
-        <button className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95">
-          LEARN MORE
+        <button 
+          className="w-full sm:w-auto bg-[#E20000] hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95"
+          onClick={handleSignUp}
+        >
+          Sign Up
         </button>
       </div>
     </section>
