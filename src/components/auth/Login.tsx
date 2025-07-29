@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/useAuth';
 
 interface LoginProps {
   onToggleMode: () => void;
@@ -14,23 +15,35 @@ const Login = ({ onToggleMode }: LoginProps) => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  const [error, setError] = useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { login } = useAuth();
+
+  const from = location.state?.from?.pathname || '/dashboard'
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError('');
+
+    const result = await login(email, password);
+
+    if (result.success) {
+      navigate(from, { replace: true });
+    } else {
+      setError(result.message || 'Login failed');
+    }
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Login attempt:', { email, password });
-      // alert('Welcome back! You\'ve been successfully logged in.');
-      setIsLoading(false);
-      navigate('/dashboard');
-    }, 1000);
+    setIsLoading(false);
+    
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center md:px-4 py-8 ">
+    <div className="min-h-screen flex items-center justify-center  py-8 ">
       <div className="w-full max-w-sm mx-auto">
         <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 sm:p-8 rounded-3xl shadow-xl">
           <div className="text-center mb-8">

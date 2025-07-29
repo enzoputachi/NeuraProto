@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/useAuth';
 
 interface SignupProps {
   onToggleMode: () => void;
@@ -18,6 +20,10 @@ const Signup = ({ onToggleMode }: SignupProps) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string>('');
+
+  const navigate = useNavigate();
+  const { signup } = useAuth()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({
@@ -36,11 +42,15 @@ const Signup = ({ onToggleMode }: SignupProps) => {
 
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Signup attempt:', formData);
-      setIsLoading(false);
-    }, 1000);
+    const result = await signup(formData.name, formData.email, formData.password);
+
+    if (result.success) {
+      navigate('/dashboard');
+    } else {
+      setError(result.message || 'Signup failed');
+    }
+
+    setIsLoading(false)
   };
 
   return (
