@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Home } from 'lucide-react';
 import Login from '@/components/auth/Login';
 import Signup from '@/components/auth/Signup';
-import Navbar from '@/components/Navbar';
 
 const Auth = () => {
   const [isLoginMode, setIsLoginMode] = useState(true);
