@@ -14,7 +14,7 @@ const NeuraDetails = () => {
       <div className="w-full lg:flex-1 lg:max-w-md mb-6 lg:mb-0">
         <div className="relative bg-gradient-to-br rounded-lg p-3 sm:p-4 lg:p-6 shadow-2xl">
           <img 
-            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            src="/rob.jpg" 
             alt="AI-powered investment analytics dashboard" 
             className="w-full h-40 sm:h-48 lg:h-64 object-cover rounded-lg shadow-lg"
           />
