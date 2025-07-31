@@ -368,7 +368,7 @@ const Dashboard = () => {
                 <Card className="bg-[#1A1D23] border-[#2A2F36] rounded-xl">
                   <CardHeader className="pb-3 sm:pb-4">
                     <CardTitle className="text-base sm:text-lg font-semibold text-white">
-                      My Updates
+                      Top Gainers
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
