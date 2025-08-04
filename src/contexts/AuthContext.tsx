@@ -28,8 +28,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                 
 
                 // Verify token with backend
-                const response = await fetch(`${baseUrl}/verify`, {
+                const response = await fetch(`${baseUrl}/users/verify`, {
                     headers: {
+                      method: 'GET',
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json'
                     }
@@ -39,7 +40,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                     const userData: User = await response.json();
                     setUser(userData);
                 } else {
-                    localStorage.removeItem('authToken')
+                    // localStorage.removeItem('authToken')
+                    return;
                 }
                
             } catch (error) {
@@ -92,6 +94,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     const signup = async ( name: string,   email: string,   password: string ) => {
+      
         try {
           const response = await fetch(`${baseUrl}/users/signup`, {
             method: "POST",
