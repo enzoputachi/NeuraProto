@@ -8,3 +8,8 @@ export const generateToken = (id, isAdmin) => {
 
     return token;
 }
+
+export const verifyToken = async (token) => {
+    const user = jwt.verify(token, process.env.JWT_SECRET);
+    return user;
+}

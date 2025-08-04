@@ -4,6 +4,7 @@ import {
   registerService,
   updateCurrentUserProfile,
 } from "../services/userAuthServices.js";
+import { verifyToken } from "../utils/tokenUtils.js";
 import { getCurrentUserService } from './../services/userAuthServices.js';
 
 
@@ -35,6 +36,27 @@ export const login = asyncHandler( async(req, res) => {
       res.status(200).json(userData);
     } catch (error) {
         res.status(400).json({ message: error.message });
+    }
+})
+
+export const handleVerifyToken = asyncHandler(async(req, res) => {
+    console.log('hit verify');
+    
+    try {
+        const token = req.headers["authorization"]?.split(' ')[1];;
+        if (!token) {
+            return res.status(401).json({ message: 'No token provided' })
+        }
+
+        const result = await verifyToken(token);
+        console.log('User profile:', result); 
+        res.status(200).json({
+            message: 'Token is valid',
+            user: result.user
+        })
+    } catch (error) {
+        console.error('Error fetching user profile:', error);        
+        res.status(401).json({ message: error.message })
     }
 })
 
