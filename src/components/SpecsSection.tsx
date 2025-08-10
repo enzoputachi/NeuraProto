@@ -41,7 +41,7 @@ const SpecsSection = () => {
         <div className="max-w-7xl mx-auto px-6  flex lg:pl-8">
           <div>
             <h1 className="text-xl lg:text-2xl font-semibold leading-snug max-w-2xl">
-              AI and{" "}
+              Ai and{" "}
               <span className="text-red-500 font-bold">
                 Satellite intelligence
               </span>{" "}
@@ -103,7 +103,7 @@ const SpecsSection = () => {
         {/* Header */}
         <div className="max-w-7xl mx-auto px-6 mb-10">
           <h1 className="text-xl lg:text-2xl font-semibold leading-snug max-w-2xl">
-            AI and{" "}
+            Ai and{" "}
             <span className="text-red-500 font-bold">
               Satellite intelligence
             </span>{" "}

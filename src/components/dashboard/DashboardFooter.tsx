@@ -1,8 +1,8 @@
 
 const DashboardFooter = () => {
   return (
-    <section id="" className="w-full p-4">
-      <div className="flex flex-col lg:flex-row border rounded-lg overflow-hidden">
+    <section id="" className="w-full p-4 border-[#2A2F36]">
+      <div className="flex flex-col lg:flex-row border rounded-lg overflow-hidden border-[#2A2F36]">
         {/* Image Container */}
         <div className="w-full lg:w-1/2 flex-shrink-0">
           <img 
@@ -20,11 +20,11 @@ const DashboardFooter = () => {
           </h2>
           
           <p className="text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 text-gray-200 leading-relaxed">
-            Earn up to 10% or more With Our AI-powered Daily
+            Earn up to 10% or more With Our Ai-powered Daily
             Recommendations/Insights.
           </p>
           
-          <button className="bg-red-600 hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base w-full sm:w-auto sm:max-w-xs">
+          <button className="bg-red-600 border-[#2A2F36] hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base w-full sm:w-auto sm:max-w-xs">
             Choose A Plan
           </button>
         </div>

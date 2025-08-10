@@ -15,7 +15,7 @@ const NeuraDetails = () => {
         <div className="relative bg-gradient-to-br rounded-lg p-3 sm:p-4 lg:p-6 shadow-2xl">
           <img 
             src="/rob.jpg" 
-            alt="AI-powered investment analytics dashboard" 
+            alt="Ai-powered investment analytics dashboard" 
             className="w-full h-40 sm:h-48 lg:h-64 object-cover rounded-lg shadow-lg"
           />
         </div>
@@ -25,7 +25,7 @@ const NeuraDetails = () => {
       <div className="w-full lg:flex-1 lg:max-w-xl lg:ml-12">
         
         <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
-          Know Exactly Which Assets To Invest In Every Month With Trusted Recommendations From Experts & AI powered Insights.
+          Know Exactly Which Assets To Invest In Every Month With Trusted Recommendations From Experts & Ai powered Insights.
         </h1>
 
         <div className="bg-[#fff] w-full max-w-full sm:max-w-lg lg:max-w-xl rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">

@@ -16,10 +16,10 @@ export const topGainersData = [
 
 export const insightsData = [
   {
-    title: 'Tech Stocks Rally on AI Optimism',
+    title: 'Tech Stocks Rally on Ai Optimism',
     author: 'Market Analyst',
     date: '2 hours ago',
-    summary: 'Technology sector sees significant gains as AI companies report strong earnings...',
+    summary: 'Technology sector sees significant gains as Ai companies report strong earnings...',
   },
   {
     title: 'Federal Reserve Signals Rate Pause',

@@ -16,7 +16,7 @@ const ChatInterface = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      content: "Hello! I'm AgroIntel AI, your trusted agricultural investment assistant. I analyze satellite data to help you make smarter commodity trading decisions. What would you like to know about today?",
+      content: "Hello! I'm AgroIntel Ai, your trusted agricultural investment assistant. I analyze satellite data to help you make smarter commodity trading decisions. What would you like to know about today?",
       sender: "ai",
       timestamp: new Date(),
     },
@@ -36,7 +36,7 @@ const ChatInterface = () => {
     setMessages(prev => [...prev, userMessage]);
     setInput("");
 
-    // Simulate AI response
+    // Simulate Ai response
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
@@ -71,7 +71,8 @@ const ChatInterface = () => {
       <div className="p-4 border-b bg-gradient-vegetation text-vegetation-foreground">
         <div className="flex items-center space-x-2">
           <Bot className="w-5 h-5" />
-          <h3 className="font-semibold">AI Assistant</h3>
+          <h3 className="font-semibold">Your daily recommendations go here</h3>
+          {/* <h3>Neura Go + Experts</h3> */}
         </div>
       </div>
       
@@ -99,7 +100,7 @@ const ChatInterface = () => {
               <div className={`max-w-[80%] rounded-lg p-3 ${
                 message.sender === "ai"
                   ? "bg-muted text-foreground"
-                  : "bg-primary text-primary-foreground"
+                  : "bg-green-200 text-black"
               }`}>
                 <p className="text-sm whitespace-pre-line">{message.content}</p>
                 <span className="text-xs opacity-70 mt-2 block">
@@ -112,18 +113,18 @@ const ChatInterface = () => {
       </ScrollArea>
       
       <div className="p-4 border-t">
-        <div className="flex space-x-2">
+        {/* <div className="flex space-x-2">
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask about crop conditions, yields, or market insights..."
             onKeyPress={(e) => e.key === "Enter" && handleSend()}
-            className="flex-1"
+            className="flex-1 text-black"
           />
           <Button onClick={handleSend} size="icon" className="bg-vegetation hover:bg-vegetation/90">
             <Send className="w-4 h-4" />
           </Button>
-        </div>
+        </div> */}
       </div>
     </Card>
   );

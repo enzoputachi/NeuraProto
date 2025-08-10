@@ -37,13 +37,13 @@ const Dashboard = () => {
                   Market Intelligence
                 </h1>
                 <p className="text-sm sm:text-base text-[#B0B0B0]">
-                  Recent market activities powered by AI
+                  Recent market activities powered by Ai
                 </p>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
                 <button
                   onClick={handleChooseAPlan}
-                  className="bg-red-600 hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base sm:w-auto sm:max-w-xs"
+                  className="bg-red-600 border-[#2A2F36] hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base sm:w-auto sm:max-w-xs"
                 >
                   Choose A Plan
                 </button>
@@ -54,18 +54,18 @@ const Dashboard = () => {
           {/* Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             <MetricCard
-              title="Current Top Gainers"
-              value="5"
+              title="Current Capital"
+              value="50,000"
               badge="1D"
               iconBgColor="bg-[#2979FF]/10"
               iconColor="text-[#2979FF]"
             />
             <MetricCard
-              title="Avg % Growth - Top Gainers"
+              title="Targeted Growth Per Month"
               value={
                 <span className="text-[#21C96E] text-xs sm:text-sm flex items-center">
                   <ArrowUpRight className="w-3 h-3 mr-1" />
-                  +163.4%
+                  +10%
                 </span>
               }
               icon={TrendingUp}
@@ -74,10 +74,10 @@ const Dashboard = () => {
               valueColor="text-[#21C96E]"
             />
             <MetricCard
-              title="Volume Of Trades"
-              value="$4,898"
-              subtitle="previous market open"
-              icon={Activity}
+              title="Market Outlook"
+              value=""
+              subtitle="Bullish"
+              icon={TrendingUp}
               iconBgColor="bg-[#2979FF]/10"
               iconColor="text-[#2979FF]"
             />
@@ -86,17 +86,18 @@ const Dashboard = () => {
           {/* Main Content */}
           <div className="space-y-4 sm:space-y-6 lg:grid lg:grid-cols-4 lg:gap-6 lg:space-y-0">
             <div className="space-y-4 sm:space-y-5 lg:col-span-2">
-              <ChatInterface/>
+              {/* <ChatInterface/> */}
+              <AIInsights />
 
               <div className="space-y-4 sm:space-y-6 lg:grid lg:grid-cols- lg:gap-6 lg:space-y-0">
-                <MarketSectors sectors={marketSectors} />
+                {/* <MarketSectors sectors={marketSectors} /> */}
                 
               </div>
             </div>
 
             <div className="lg:col-span-2">
               <SatelliteMap  />
-              <StockTable stocks={topGainersData} />
+              {/* <StockTable stocks={topGainersData} /> */}
             </div>
           </div>
         </div>

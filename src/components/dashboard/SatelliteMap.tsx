@@ -16,7 +16,7 @@ const SatelliteMap = () => {
   const regions: RegionData[] = [
     {
       id: "1",
-      name: "Ifo Zone",
+      name: "Cocoa",
       state: "Ogun",
       ndvi: 0.75,
       rainfall: 85,
@@ -25,7 +25,7 @@ const SatelliteMap = () => {
     },
     {
       id: "2",
-      name: "Ado-Odo",
+      name: "Maize",
       state: "Ogun",
       ndvi: 0.68,
       rainfall: 72,
@@ -34,7 +34,7 @@ const SatelliteMap = () => {
     },
     {
       id: "3",
-      name: "Abeokuta North",
+      name: "Soghurm",
       state: "Ogun",
       ndvi: 0.52,
       rainfall: 45,
@@ -43,7 +43,7 @@ const SatelliteMap = () => {
     },
     {
       id: "4",
-      name: "Kaduna Central",
+      name: "Cashew",
       state: "Kaduna",
       ndvi: 0.82,
       rainfall: 92,
@@ -55,9 +55,9 @@ const SatelliteMap = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "healthy":
-        return "bg-vegetation text-vegetation-foreground";
+        return "bg-green-700 text-vegetation-foreground";
       case "warning":
-        return "bg-harvest text-harvest-foreground";
+        return "bg-yellow-700 text-harvest-foreground";
       case "critical":
         return "bg-destructive text-destructive-foreground";
       default:
@@ -66,17 +66,17 @@ const SatelliteMap = () => {
   };
 
   return (
-    <Card className="p-6 shadow-earth bg-[#1A1D23] text-white">
+    <Card className="p-6 shadow-earth bg-[#1A1D23] border-[#2A2F36] text-white">
       <div className="flex items-center space-x-2 mb-6">
         <Satellite className="w-5 h-5 text-sky" />
         <h3 className="text-lg font-semibold">Satellite Monitoring Regions</h3>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid  grid-cols-1 md:grid-cols-2 gap-4">
         {regions.map((region) => (
           <div
             key={region.id}
-            className="p-4 border rounded-lg hover:shadow-glow transition-all duration-300 cursor-pointer"
+            className="p-4 rounded-lg  hover:shadow-glow transition-all duration-300 cursor-pointer"
           >
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center space-x-2">
@@ -97,7 +97,7 @@ const SatelliteMap = () => {
                 <div className="flex items-center space-x-2">
                   <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-vegetation"
+                      className="h-full bg-green-400"
                       style={{ width: `${region.ndvi * 100}%` }}
                     />
                   </div>
@@ -110,7 +110,7 @@ const SatelliteMap = () => {
                 <div className="flex items-center space-x-2">
                   <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-sky"
+                      className="h-full bg-yellow-400"
                       style={{ width: `${region.rainfall}%` }}
                     />
                   </div>
@@ -123,7 +123,7 @@ const SatelliteMap = () => {
                 <div className="flex items-center space-x-2">
                   <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-soil"
+                      className="h-full bg-red-400"
                       style={{ width: `${region.soilMoisture}%` }}
                     />
                   </div>

@@ -3,7 +3,7 @@ import React from "react";
 const MadeByHumans = () => {
   return (
     <section id="" className="w-full p-4">
-      <div className="flex flex-col lg:flex-row border rounded-lg overflow-hidden">
+      <div className="flex flex-col border-[#2A2F36] lg:flex-row border rounded-lg overflow-hidden">
         {/* Image Container */}
         <div className="w-full lg:w-1/2 flex-shrink-0">
           <img 
@@ -24,7 +24,7 @@ const MadeByHumans = () => {
             Let's get you Investing your earnings in smart securities like stocks, commodities and much more
           </p>
           
-          <button className="bg-red-600 hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base w-full sm:w-auto sm:max-w-xs">
+          <button className="bg-red-600 border-[#2A2F36] hover:bg-red-700 transition-colors duration-200 border rounded-md text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base w-full sm:w-auto sm:max-w-xs">
             Get Started
           </button>
         </div>
