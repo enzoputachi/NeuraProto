@@ -1,37 +1,43 @@
 import mongoose from "mongoose";
+const { Schema } = mongoose;
 
-const userSchema = mongoose.Schema(
+const userSchema = Schema(
     {
-        name : {
+        name : { type: String, required: true, },
+        email: { type: String, required: true, },
+        password: { type: String, required: true },
+        role: [{
             type: String,
-            required: true,
-        },
-        email: {
-            type: String,
-            required: true,
-        },
-        password: {
-            type: String,
-            required: true,
-        },
-        cart: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Course'
+            enum: ['investor', 'expert', 'admin']
         }],
-        purchasedCourses: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Course',
+        investmentPlan: [{
+            type: Schema.Types.ObjectId,
+            ref: "Plan",
+            enum: ["growth", "partner"],
+        }],
+        subscribedExpert: [{ type: Schema.Types.ObjectId, ref: "User" }],
+
+        bio: {
+            type: String,
+            required: function() { return this.role.includes('expert'); }
+        },
+        expertise: {
+            type: String,
+            required: function () {
+                return this.role.includes("expert")
+            }
         },
         isAdmin: {
             type: Boolean,
             required: true,
             default: false,
         },
+
     },
     {
-        timestamp: true
+        timestamps: true
     }
 )
 
-const userModel = mongoose.model('User', userSchema);
-export default userModel;
+const User = mongoose.model('User', userSchema);
+export default User;
