@@ -1,15 +1,15 @@
-import userModel from "../models/userModel.js"
+import User from "../models/userModel.js"
 import { comparePassword, hashPassword } from "../utils/hashUtils.js";
 import { generateToken } from "../utils/tokenUtils.js";
 
 
 export const registerService = async(name, email, password) => {
     try {
-        const userExists = await userModel.findOne({ email });
+        const userExists = await User.findOne({ email });
         if (userExists) throw new Error('User already exists');
 
         const hashedPassword = await hashPassword(password);
-        const newUser = new userModel({ name, email, password: hashedPassword});
+        const newUser = new User({ name, email, password: hashedPassword});
 
         await newUser.save()
 
@@ -33,7 +33,7 @@ export const registerService = async(name, email, password) => {
 
 export const loginService = async(email, password) => {
     try {
-        const existingUser = await userModel.findOne({ email });
+        const existingUser = await User.findOne({ email });
         if (!existingUser) throw new Error('Invalid email or password');
 
         const isPasswordValid = await comparePassword(password, existingUser.password);
@@ -58,7 +58,7 @@ export const loginService = async(email, password) => {
 
 // Service to get current user profile
 export const getCurrentUserService = async (userId) => {
-    const user = await userModel.findById(userId).select('-password');
+    const user = await User.findById(userId).select('-password');
 
     if(!user) throw new Error('User not found');
 
@@ -67,7 +67,7 @@ export const getCurrentUserService = async (userId) => {
 
 // Service to update current user profile
 export const updateCurrentUserProfile = async(userId, updateData) => {
-    const updatedUser = await userModel.findByIdAndUpdate(userId, updateData, {
+    const updatedUser = await User.findByIdAndUpdate(userId, updateData, {
         new: true,
         runValidator: true,
     });
