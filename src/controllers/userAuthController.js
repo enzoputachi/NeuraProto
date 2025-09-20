@@ -1,21 +1,20 @@
 import asyncHandler from "../middlewares/asyncHandler.js";
 import {
-  loginService,
-  registerService,
-  updateCurrentUserProfile,
+  signInUser,
+  signUpUser,
 } from "../services/userAuthServices.js";
 import { verifyToken } from "../utils/tokenUtils.js";
-import { getCurrentUserService } from './../services/userAuthServices.js';
+import { getUserProfile } from './../services/userAuthServices.js';
 
 
-export const register = asyncHandler(async(req, res) => {
+export const signup = asyncHandler(async(req, res) => {
     const { name, email, password } = req.body;
     console.log('register triggered', req.body )
 
     if (!name || !email || !password) throw new Error("Please fill all the inputs.");
 
     try {
-        const userData = await registerService(name, email, password);
+        const userData = await signUpUser(name, email, password);
 
         res.status(201).json(userData)
     } catch (error) {
@@ -31,7 +30,7 @@ export const login = asyncHandler( async(req, res) => {
     if (!email || !password) throw new Error("Please fill all the inputs.");
 
     try {
-       const userData = await loginService(email, password);
+       const userData = await signInUser(email, password);
   
       res.status(200).json(userData);
     } catch (error) {
@@ -60,7 +59,7 @@ export const handleVerifyToken = asyncHandler(async(req, res) => {
     }
 })
 
-export const getCurrentUserProfile = asyncHandler(async(req, res) => {
+export const getProfile = asyncHandler(async(req, res) => {
     
     const userId = req.user?.id;
     
@@ -69,7 +68,7 @@ export const getCurrentUserProfile = asyncHandler(async(req, res) => {
     }
 
     try {
-        const userProfile = await getCurrentUserService(userId);
+        const userProfile = await getUserProfile(userId);
         return res.status(200).json(userProfile);
     } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -92,7 +91,7 @@ export const logout = asyncHandler(async(req, res) =>{
     res.status(200).json({ message: "Logged out sccessfully"})
 })
 
-export const updateUserProfile = asyncHandler(async(req, res) => {
+export const updateProfile = asyncHandler(async(req, res) => {
     const userId = req.user?.id;
     const updateData = req.body;
 
@@ -101,7 +100,7 @@ export const updateUserProfile = asyncHandler(async(req, res) => {
     }
 
     try {
-        const updatedUser = await updateCurrentUserProfile(userId, updateData);
+        const updatedUser = await updateUserProfile(userId, updateData);
         res.status(200).json(updatedUser);
     } catch (error) {
         return res.status(500).json({ message: 'Error updating user', error: error.message})
