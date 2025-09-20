@@ -1,5 +1,5 @@
 // src/controllers/postController.js
-import * as postService from "../services/postService.js";
+import * as postService from "../services/contentService.js";
 
 export const createPost = async (req, res) => {
     try {
