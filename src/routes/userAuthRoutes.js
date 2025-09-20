@@ -1,17 +1,16 @@
 import express from 'express';
-import { getCurrentUserProfile, handleVerifyToken, login, logout, register } from '../controllers/userAuthController.js';
+import { getProfile, handleVerifyToken, login, logout, signup, updateProfile } from '../controllers/userAuthController.js';
 import { authenticate } from '../middlewares/authMiddleware.js';
-import { updateCurrentUserProfile } from '../services/userAuthServices.js';
 
 
 const router = express.Router();
 
-router.post('/signup', register)
+router.post('/signup', signup)
 router.post('/login', login)
 router.post('/logout', logout)
 router.get('/verify', handleVerifyToken)
-router.get('/profile', authenticate, getCurrentUserProfile)
-router.patch('/profile', authenticate, updateCurrentUserProfile)
+router.get('/profile', authenticate, getProfile)
+router.patch('/profile', authenticate, updateProfile)
 
 
 export default router;
